@@ -36,13 +36,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: |
-          # Set base path for GitHub Pages (repo name)
-          export NEXT_PUBLIC_BASE_PATH=/Weather-App
-          echo "NEXT_PUBLIC_BASE_PATH=$NEXT_PUBLIC_BASE_PATH" >> $GITHUB_ENV
-          npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /Weather-App
+        run: npm run build
 
       - name: Copy .nojekyll to out directory
         run: cp .nojekyll out/.nojekyll
